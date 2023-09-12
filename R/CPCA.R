@@ -162,7 +162,7 @@ cpca = function (dataset.list, weight_by_var = TRUE, pca.type = "cpca", nfeat = 
     Q <- matrix(rnorm(nrow(V) * n), nrow(V))
     d <- rep(0, k)
     if (verbose) { message("\tRunning SVD.")}
-    print(Head(matDiMult(V, Q, n_cores = ncpu)))
+    print(head(matDiMult(V, Q, n_cores = ncpu)))
     for (iter in 1:iter.max) {
       Q <- qr.Q(qr(matDiMult(V, Q, n_cores = ncpu)))
       B <- matDiMult(t(V), Q, n_cores = ncpu)
